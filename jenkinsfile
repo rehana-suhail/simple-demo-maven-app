@@ -17,7 +17,7 @@ node ('maven-label') {
             if (isUnix()) {
                 //sonar added just try
                 //deploy the repo to jfrog
-                sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean deploy sonar:sonar -Dsonar.host.url="http://ec2-52-66-236-162.ap-south-1.compute.amazonaws.com:9000"'
+                sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package'
             } else {
                 bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean package/)
             }
